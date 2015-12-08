@@ -51,3 +51,19 @@ ekf_localization:
   odom_frame: odom
   base_link_frame: base_link
   world_frame: odom
+
+# Custom Navigation Stack-based controller
+reelrbtx_follow_controller:
+   type: reelrbtx_follow_controller/ReelRbtxFollowController
+   joint: reel_wheel
+   state_publish_rate: 100 # hz
+   cycle_hz: 200
+   av_ratio: 1
+   cmd_vel_topic: /jackal_velocity_controller/cmd_vel
+
+# Individual Position Controllers
+# Allows to send individual ROS msg of Float64 to each joint separately
+reelrbtx_joint_position_controller:
+   type: position_controllers/JointPositionController
+   joint: reel_wheel
+   pid: {p: 100.0, i: 0.01, d: 10.0}
