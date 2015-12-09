@@ -29,21 +29,22 @@
     <material>Gazebo/DarkGrey</material>
   </gazebo>
 
-  <joint name="reel_wheel" type="continuous">
+  <joint name="reel_wheel" type="revolute">
     <parent link="chassis_link"/>
     <child link="reel_wheel_link" />
     <origin xyz="-0.1 0 0.2" rpy="0 0 0"/>
     <axis xyz="0 1 0" />
+    <limit lower="0" upper="30.48" effort="0" velocity="10" />
   </joint>
 
-  <transmission name="reel_wheel_trans">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="reel_wheel">
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="reel_actuator">
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
+  <!-- <transmission name="reel_wheel_trans"> -->
+  <!--   <type>transmission_interface/SimpleTransmission</type> -->
+  <!--   <joint name="reel_wheel"> -->
+  <!--     <hardwareInterface>PositionJointInterface</hardwareInterface> -->
+  <!--   </joint> -->
+  <!--   <actuator name="reel_actuator"> -->
+  <!--     <mechanicalReduction>1</mechanicalReduction> -->
+  <!--   </actuator> -->
+  <!-- </transmission> -->
   <!-- End ReelRbtx Reel -->
 </robot>

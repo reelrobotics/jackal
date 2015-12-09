@@ -67,3 +67,11 @@ reelrbtx_joint_position_controller:
    type: position_controllers/JointPositionController
    joint: reel_wheel
    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+reelrbtx_hw_interface:
+   joint_name: reel_wheel
+   joint_limit_upper: 1000
+   joint_limit_lower: 0
+   port: /dev/ttyUSB0
+   baud: 115200
+   simulation_mode: false
