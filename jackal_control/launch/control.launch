@@ -1,5 +1,6 @@
 <launch>
   <rosparam command="load" file="$(find jackal_control)/config/control.yaml" />
+  <rosparam command="load" file="$(find reelrbtx_control)/config/controllers.yaml" />
 
   <node name="controller_spawner" pkg="controller_manager" type="spawner"
         args="jackal_joint_publisher jackal_velocity_controller reelrbtx_follow_controller --shutdown-timeout 1" />

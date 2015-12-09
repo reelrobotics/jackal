@@ -196,7 +196,7 @@
   <xacro:include filename="accessories.urdf.xacro" />
 
   <!-- Support for reelrbtx reel -->
-  <xacro:include filename="reelrbtx.urdf.xacro" />
+  <xacro:include filename="$(find reelrbtx_description)/urdf/reelrbtx.urdf.xacro" />
 
   <!-- Optional custom includes. -->
   <xacro:include filename="$(optenv JACKAL_URDF_EXTRAS empty.urdf)" />
