@@ -197,6 +197,10 @@
 
   <!-- Support for reelrbtx reel -->
   <xacro:include filename="$(find reelrbtx_description)/urdf/reelrbtx.urdf.xacro" />
+  <xacro:reelrbtx>
+    <parent link="chassis_link"/>
+    <origin xyz="-0.1 0 0.2" rpy="0 0 0"/>
+  </xacro:reelrbtx>
 
   <!-- Optional custom includes. -->
   <xacro:include filename="$(optenv JACKAL_URDF_EXTRAS empty.urdf)" />
